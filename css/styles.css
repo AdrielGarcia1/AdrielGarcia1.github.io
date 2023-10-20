@@ -176,12 +176,12 @@ nav {
 }
 
 .prev {
-    left: -8px;
+    left: 4%;
     transform: translateY(-50%);
 }
 
 .next {
-    right: 25px;
+    right: 4%;
     transform: translateY(-50%);
 }
 /* Estilos para productos */
