@@ -2,8 +2,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <link href="img/logo.jpeg" rel="icon">
+    <title>Candleit</title>
 </head>
 <body>
     <header>
@@ -15,100 +19,59 @@
                 <input type="text" placeholder="Buscar productos...">
                 <button>Buscar</button>
             </div>
+            <div class="user-cart-icons">
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
         </div>
     </header>
-
     <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Categorías</a></li>
-            <li><a href="#">Mi Carrito</a></li>
-        </ul>
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#"><i class="fas fa-list"></i> Categorías</a></li>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i> Mi Carrito</a></li>
+            </ul>
+        </nav>
+
     </nav>
     <section class="carrusel p-4" style="position: relative; overflow: hidden;">
+        <h2>Velas más vendidas</h2>
+
         <!-- Botón para retroceder en el carrusel -->
         <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+
         <!-- Contenedor de las diapositivas -->
         <div class="slides" style="display: flex; scroll-snap-type: x mandatory; position: relative;">
 
             <!-- Primera diapositiva -->
             <div class="slide" style="scroll-snap-align: start;">
-                <img src="img/vela1.jpeg" alt="Carrusel 1">
+                <div class="slide-content">
+                    <img src="img/vela1.jpeg" alt="Carrusel 1">
+                    <button class="add-to-cart-button">Comprar vela de flor</button>
+                </div>
             </div>
             <!-- Segunda diapositiva -->
             <div class="slide" style="scroll-snap-align: start;">
-                <img src="img/vela2.jpeg" alt="Carrusel 2">
+                <div class="slide-content">
+                    <img src="img/vela2.jpeg" alt="Carrusel 2">
+                    <button class="add-to-cart-button">Comprar vela de playa</button>
+                </div>
             </div>
             <!-- Tercera diapositiva -->
             <div class="slide" style="scroll-snap-align: start;">
-                <img src="img/vela3.jpeg" alt="Carrusel 3">
-            </div>
-            <!-- Cuarta diapositiva -->
-            <div class="slide" style="scroll-snap-align: start;">
-                <img src="img/vela4.jpeg" alt="Carrusel 4">
+                <div class="slide-content">
+                    <img src="img/vela3.jpeg" alt="Carrusel 3">
+                    <button class="add-to-cart-button">Comprar vela de arbol</button>
+                </div>
             </div>
         </div>
+
         <!-- Botón para avanzar en el carrusel -->
         <button class="next hidden" id="autoNext">&#10095;</button>
     </section>
 
-
-    <script>
-        // Inicialización de variables
-        let currentIndex = 0; // Índice de la diapositiva actual
-        const slides = document.querySelectorAll('.slide'); // Selecciona todas las diapositivas
-        const container = document.querySelector('.slides'); // Selecciona el contenedor de las diapositivas
-        let autoSlideInterval; // Variable para el intervalo de cambio automático
-
-        // Función para mostrar la diapositiva actual
-        function showSlide(index) {
-            container.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        // Función para cambiar la diapositiva
-        function changeSlide(offset) {
-            currentIndex += offset; // Aumenta o disminuye el índice de la diapositiva
-
-            if (currentIndex < 0) {
-                currentIndex = slides.length - 1; // Vuelve a la última diapositiva si estamos en la primera
-            } else if (currentIndex >= slides.length) {
-                currentIndex = 0; // Vuelve a la primera diapositiva si estamos en la última
-            }
-
-            showSlide(currentIndex); // Muestra la diapositiva actual
-
-            // Borra el intervalo actual (si existe)
-            clearInterval(autoSlideInterval);
-
-            // Inicia un nuevo intervalo después de 6 segundos (6000 milisegundos)
-            autoSlideInterval = setTimeout(() => {
-                autoSlideInterval = setInterval(() => {
-                    changeSlide(1); // Cambiar a la siguiente diapositiva
-                }, 500); // Intervalo de 500 milisegundos (0.5 segundos)
-            }, 3000); // Espera 6 segundos antes de reanudar el cambio automático
-        }
-
-        // Muestra la primera diapositiva al cargar la página
-        showSlide(currentIndex);
-
-        // Agrega un temporizador para cambiar de diapositiva automáticamente cada 0.5 segundos
-        autoSlideInterval = setInterval(() => {
-            changeSlide(1); // Cambiar a la siguiente diapositiva
-        }, 500); // Intervalo de 500 milisegundos (0.5 segundos)
-
-        // Agrega eventos de clic a los botones de navegación
-        const prevButton = document.querySelector('.prev');
-        const nextButton = document.querySelector('.next');
-
-        prevButton.addEventListener('click', () => {
-            changeSlide(-1); // Cambiar a la diapositiva anterior
-        });
-
-        nextButton.addEventListener('click', () => {
-            changeSlide(1); // Cambiar a la siguiente diapositiva
-        });
-    </script>
-
+    <script src="js/script.js"></script>
     <main>
         <section class="productos">
             <article class="producto">
@@ -158,8 +121,8 @@
         </div>
         <div class="footer-right">
             <!-- Iconos de Instagram y Twitter -->
-            <a href="https://www.instagram.com/tucuenta" target="_blank"><img src="img/instagram.jpeg" alt="Instagram"></a>
-            <a href="https://www.twitter.com/tucuenta" target="_blank"><img src="img/tiwitter.jpeg" alt="Twitter"></a>
+            <a href="https://www.instagram.com/tucuenta" target="_blank"><i class="fab fa-instagram fa-white"></i></a>
+            <a href="https://www.twitter.com/tucuenta" target="_blank"><i class="fab fa-twitter fa-white"></i></a>
         </div>
     </footer>
 </body>

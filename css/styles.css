@@ -10,8 +10,8 @@ header {
 
 .logo {
     position: absolute;
-    top: 10px; 
-    left: 10px; 
+    top: 3px;
+    left: 10px;
     width: 2cm;
     height: 2cm;
     border-radius: 50%;
@@ -24,7 +24,7 @@ header {
     }
 /* Estilos para la sección de búsqueda */
 .search {
-    margin-top: 10px;
+    margin-top: 1px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,38 +52,24 @@ header {
         .search button:hover {
             background-color: #FF8C00;
         }
-/* Estilos para la barra de menú */
-nav {
-    background-color: #ff5733; 
-    color: #fff;
-    height: 1cm; 
+/* Estilos para los íconos de usuario y carrito */
+.user-cart-icons {
     display: flex;
-    justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 30px;
+    right: 30px;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-}
-
-nav ul li {
-  margin-right: 20px;
-}
-/* Estilos para los enlaces del menú */
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: #007bff;
-}
-
+    .user-cart-icons a {
+        color: #fff;
+        font-size: 20px;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+    .user-cart-icons a:hover {
+        color: #6b6464; /* Color del texto al pasar el mouse sobre los enlaces */
+    }
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
@@ -92,28 +78,45 @@ body {
     background-color: #f0f0f0;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-    nav ul li {
-        display: inline;
-        margin-right: 20px;
-    }
-
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
+
+/* Estilos para la barra de menú */
+nav {
+    background-color: #ff5733; /* Color de fondo de la barra de menú */
+    color: #fff; /* Color del texto en la barra de menú */
+    height: 1cm; /* Altura de la barra de menú */
+    display: flex;
+    justify-content: center; /* Alineación horizontal al centro */
+    align-items: center; /* Alineación vertical al centro */
+}
+
+    nav ul {
+        list-style-type: none; /* Elimina los marcadores de lista */
+        padding: 0; /* Elimina el relleno predeterminado de la lista */
+        display: flex; /* Muestra los elementos de la lista en línea */
+    }
+
+        nav ul li {
+            margin-right: 20px; /* Espacio entre los elementos del menú */
+        }
+
+            /* Estilos para los enlaces del menú */
+            nav ul li a {
+                color: #fff; /* Color del texto de los enlaces */
+                text-decoration: none; /* Elimina la decoración de subrayado de los enlaces */
+                font-weight: bold; /* Texto en negrita */
+                font-size: 16px; /* Tamaño de fuente */
+                transition: color 0.3s; /* Transición para cambiar de color al pasar el mouse */
+            }
+
+                nav ul li a:hover {
+                    color: #6b6464; /* Color del texto al pasar el mouse sobre los enlaces */
+                }
+
 /* Estilos para el carrusel */
 .carrusel {
     max-width: 300px; /* Establece el ancho máximo en un cuarto de la página */
@@ -129,6 +132,36 @@ main {
     scroll-snap-align: center;
     flex: 0 0 100%; /* Ancho relativo para adaptarse al carrusel */
 }
+/* Estilos para el contenedor que envuelve la imagen y el botón */
+.slide-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+    /* Estilos para la imagen */
+    .slide-content img {
+        max-width: 100%;
+        height: auto;
+    }
+
+/* Estilos para el botón "Añadir al carrito" dentro de .slide-content */
+.add-to-cart-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+    .add-to-cart-button:hover {
+        background-color: #0056b3;
+    }
 
 /* Estilos para los botones */
 .prev, .next {
@@ -139,7 +172,7 @@ main {
     position: absolute;
     top: 50%;
     z-index: 1;
-    color: #fff;
+    color: #ff5733;
 }
 
 .prev {
@@ -181,7 +214,7 @@ main {
     }
 
     .producto button {
-        background-color: #007bff;
+        background-color: #6b6464;
         color: #fff;
         border: none;
         padding: 10px 20px;
@@ -190,7 +223,7 @@ main {
     }
 
         .producto button:hover {
-            background-color: #0056b3;
+            background-color: #ff5733;
         }
 /* Estilos para la sección de productos */
 .productos {
@@ -279,3 +312,6 @@ footer {
     margin-top: 3rem; /* Espacio extremadamente grande arriba del objeto */
 }
 
+.fa-white {
+    color: white;
+}
