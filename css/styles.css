@@ -1,6 +1,6 @@
 /* Estilos para el encabezado */
 header {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     padding: 20px;
     display: flex;
@@ -39,10 +39,10 @@ header {
     }
 
     .search button {
-        background-color: #FFA500;
+        background-color: #e95d40;
         color: #fff;
         border: none;
-        padding: 10px 20px;
+        padding: 13px 20px;
         cursor: pointer;
         transition: background-color 0.3s;
         border-radius: 5px;
@@ -86,7 +86,7 @@ main {
 
 /* Estilos para la barra de menú */
 nav {
-    background-color: #ff5733; /* Color de fondo de la barra de menú */
+    background-color: #e95d40; /* Color de fondo de la barra de menú */
     color: #fff; /* Color del texto en la barra de menú */
     height: 1cm; /* Altura de la barra de menú */
     display: flex;
@@ -118,6 +118,11 @@ nav {
                 }
 
 /* Estilos para el carrusel */
+/* Estilos para centrar el h2 en el section */
+.section-heading {
+    text-align: center;
+}
+
 .carrusel {
     max-width: 300px; /* Establece el ancho máximo en un cuarto de la página */
     margin: 0 auto; /* Centra el carrusel horizontalmente */
@@ -148,21 +153,25 @@ nav {
         height: auto;
     }
 
-/* Estilos para el botón "Añadir al carrito" dentro de .slide-content */
+/* Estilos para el botón */
 .add-to-cart-button {
-    background-color: #007bff;
+    background-color: rgba(107, 100, 100, 0.5);
     color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s;
     border-radius: 5px;
+    position: absolute;
+    bottom: 10px; /* Ajusta la distancia desde la parte inferior de la imagen */
+    left: 50%; /* Centra horizontalmente el botón en relación con la imagen */
+    transform: translateX(-50%); /* Corrige el centro del botón en relación con la imagen */
 }
 
+    /* Estilos para el texto del botón */
     .add-to-cart-button:hover {
-        background-color: #0056b3;
+        background-color: rgba(255, 87, 51, 0.6);
     }
-
 /* Estilos para los botones */
 .prev, .next {
     background-color: transparent;
@@ -218,6 +227,7 @@ nav {
         color: #fff;
         border: none;
         padding: 10px 20px;
+        border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s;
     }
@@ -238,10 +248,10 @@ nav {
 }
 /* Estilos para el pie de página */
 footer {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     padding: 10px 0;
-    text-align: center;    
+    text-align: center;
     bottom: 0;
     width: 100%;
     display: flex;
